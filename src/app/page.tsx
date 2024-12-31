@@ -2,6 +2,7 @@ import FeaturesCard from "@/components/features-card";
 import Hero from "@/components/hero";
 import Navbar from "@/components/navbar";
 import Products from "@/components/products";
+import ScrollCard from "@/components/scroll-card";
 
 export default function Home() {
   return (
@@ -10,6 +11,7 @@ export default function Home() {
       <Hero />
       <FeaturesCard />
       <Products />
+      <ScrollCard />
     </main>
   );
 }

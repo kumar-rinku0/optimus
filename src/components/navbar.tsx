@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { FaLeaf } from "react-icons/fa";
-import { FaBurger } from "react-icons/fa6";
+import { FaBars } from "react-icons/fa6";
 
 const navLinks = [
   {
@@ -28,7 +28,7 @@ const navLinks = [
 const MobileNav = ({ className }: { className: string }) => {
   return (
     <div className={className}>
-      <FaBurger />
+      <FaBars className="text-xl font-semibold" />
     </div>
   );
 };
