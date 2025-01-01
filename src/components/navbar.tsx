@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { FaLeaf } from "react-icons/fa";
-import { FaBars } from "react-icons/fa6";
 import MotionNav from "./motion-nav";
 
 const navLinks = [

@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { motion, Variants } from "framer-motion";
 import Link from "next/link";
-import { Fa7, FaBars, FaLeaf } from "react-icons/fa6";
+import { FaBars, FaLeaf } from "react-icons/fa6";
 const navLinks = [
   {
     name: "home",
