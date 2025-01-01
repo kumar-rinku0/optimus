@@ -5,11 +5,11 @@ import MotionNav from "./motion-nav";
 const navLinks = [
   {
     name: "home",
-    id: "#home",
+    id: "/",
   },
   {
     name: "shop",
-    id: "#shop",
+    id: "/shop",
   },
   {
     name: "blog",
@@ -28,7 +28,7 @@ const navLinks = [
 const MobileNav = ({ className }: { className: string }) => {
   return (
     <div className={className}>
-      <MotionNav />
+      <MotionNav navLinks={navLinks} />
     </div>
   );
 };
@@ -56,7 +56,7 @@ const Navbar = () => {
   return (
     <div className="bg-[#e4e6f4] border-b border-gray-300">
       <nav className="flex justify-between items-center px-16 py-8">
-        <Link href={"#home"} className="flex">
+        <Link href={"/"} className="flex">
           <span className="text-xl font-bold">Shop</span>
           <FaLeaf className="text-xs self-start text-green-600" />
         </Link>

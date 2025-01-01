@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { League_Spartan } from "next/font/google";
 import "./globals.css";
+import Navbar from "@/components/navbar";
+import Footer from "@/components/footer";
+import ScrollProgress from "@/components/scroll-progress";
 
 const geistMono = League_Spartan({
   variable: "--font-league-spartan",
@@ -20,7 +23,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistMono.variable} antialiased`}>{children}</body>
+      <body className={`${geistMono.variable} antialiased`}>
+        <Navbar />
+        {children}
+        <Footer />
+        <ScrollProgress />
+      </body>
     </html>
   );
 }

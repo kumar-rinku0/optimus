@@ -4,28 +4,6 @@ import { useState } from "react";
 import { motion, Variants } from "framer-motion";
 import Link from "next/link";
 import { FaBars, FaLeaf } from "react-icons/fa6";
-const navLinks = [
-  {
-    name: "home",
-    id: "#home",
-  },
-  {
-    name: "shop",
-    id: "#shop",
-  },
-  {
-    name: "blog",
-    id: "#blog",
-  },
-  {
-    name: "about",
-    id: "#about",
-  },
-  {
-    name: "contect",
-    id: "#contect",
-  },
-];
 
 const itemVariants: Variants = {
   open: {
@@ -36,7 +14,12 @@ const itemVariants: Variants = {
   closed: { opacity: 0, y: 20, transition: { duration: 0.2 } },
 };
 
-export default function MotionNav() {
+interface NavLink {
+  id: string;
+  name: string;
+}
+
+export default function MotionNav({ navLinks }: { navLinks: Array<NavLink> }) {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -62,7 +45,7 @@ export default function MotionNav() {
           {/* <svg width="15" height="15" viewBox="0 0 20 20">
             <path d="M0 7 L 20 7 L 10 16" />
           </svg> */}
-          <FaLeaf />
+          <FaLeaf className="text-green-600" />
         </motion.div>
       </motion.button>
       <motion.ul
@@ -86,10 +69,10 @@ export default function MotionNav() {
             },
           },
         }}
-        className="bg-[#e4e6f4] border border-gray-400 rounded-xl absolute w-24 -right-2 top-8 h-60 flex flex-col justify-evenly items-start"
+        className="bg-[#e4e6f4] border border-gray-400 rounded-xl absolute w-24 -right-4 top-8 h-60 flex flex-col justify-evenly items-start z-10"
         style={{ pointerEvents: isOpen ? "auto" : "none" }}
       >
-        {navLinks.map((link) => {
+        {navLinks.map((link: { id: string; name: string }) => {
           return (
             <Link
               key={link.id}
