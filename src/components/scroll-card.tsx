@@ -1,4 +1,8 @@
+"use client";
+
 import * as motion from "motion/react-client";
+import { useEffect, useRef } from "react";
+import { useInView, useAnimation } from "motion/react";
 import type { Variants } from "motion/react";
 import Image from "next/image";
 
@@ -20,15 +24,37 @@ interface CardProps {
 }
 
 function Card({ emoji, hueA, hueB, i }: CardProps) {
+  const controls = useAnimation();
+  const ref = useRef(null);
+  const isInView = useInView(ref, { amount: 1 });
   const background = `linear-gradient(306deg, ${hue(hueA)}, ${hue(hueB)})`;
+
+  useEffect(() => {
+    console.log("Element is in view: ", isInView);
+    let timeout: NodeJS.Timeout;
+    timeout = setTimeout(() => {
+      const show = () => {
+        controls.start("onscreen");
+      };
+      const hide = () => {
+        controls.start("offscreen");
+      };
+      if (isInView) {
+        show();
+      } else {
+        hide();
+      }
+    }, 10);
+  }, [isInView]);
 
   return (
     <motion.div
       className={`card-container-${i}`}
       style={cardContainer}
       initial="offscreen"
-      whileInView="onscreen"
-      viewport={{ amount: 0.8 }}
+      animate={controls}
+      ref={ref}
+      // viewport={{ amount: 0.8 }}
     >
       <div style={{ ...splash, background }} />
       <motion.div
