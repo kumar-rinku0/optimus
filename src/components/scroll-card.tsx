@@ -26,26 +26,26 @@ interface CardProps {
 function Card({ emoji, hueA, hueB, i }: CardProps) {
   const controls = useAnimation();
   const ref = useRef(null);
-  const isInView = useInView(ref, { amount: 1 });
+  const isInView = useInView(ref, { amount: 0.75 });
   const background = `linear-gradient(306deg, ${hue(hueA)}, ${hue(hueB)})`;
 
   useEffect(() => {
     console.log("Element is in view: ", isInView);
-    let timeout: NodeJS.Timeout;
-    timeout = setTimeout(() => {
-      const show = () => {
-        controls.start("onscreen");
-      };
-      const hide = () => {
-        controls.start("offscreen");
-      };
+    const show = () => {
+      controls.start("onscreen");
+    };
+    const hide = () => {
+      controls.start("offscreen");
+    };
+    const timeout: NodeJS.Timeout = setTimeout(() => {
       if (isInView) {
         show();
       } else {
         hide();
       }
-    }, 10);
-  }, [isInView]);
+    }, 100);
+    return () => clearTimeout(timeout);
+  }, [isInView, controls]);
 
   return (
     <motion.div
