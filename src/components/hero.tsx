@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import buttonBgPic from "../../public/assets/button.png";
 
 const Hero = () => {
   return (
@@ -21,13 +22,11 @@ const Hero = () => {
         <Link href="#shop">
           <div className="w-60 h-20 relative flex justify-center items-center">
             <Image
-              src="/assets/button.png"
+              src={buttonBgPic}
               alt="button img"
-              fill={true}
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-              className="object-contain"
+              className="object-contain w-auto h-auto"
             />
-            <span className="font-semibold">shop</span>
+            <span className="font-semibold absolute">shop</span>
           </div>
         </Link>
       </div>

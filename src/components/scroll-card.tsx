@@ -30,13 +30,18 @@ function Card({ emoji, hueA, hueB, i }: CardProps) {
       whileInView="onscreen"
       viewport={{ amount: 0.8 }}
     >
-      <div style={{ ...splash }} />
-      <motion.div style={card} variants={cardVariants} className="card">
+      <div style={{ ...splash, background }} />
+      <motion.div
+        style={card}
+        variants={cardVariants}
+        className="card relative"
+      >
         {emoji.length > 5 && (
           <Image
             src={emoji}
             alt="img"
             fill
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             className="object-cover border-inherit rounded-3xl"
           />
         )}
@@ -67,12 +72,6 @@ const hue = (h: number) => `hsl(${h}, 100%, 50%)`;
  * ==============   Styles   ================
  */
 
-const container: React.CSSProperties = {
-  maxWidth: 500,
-  padding: "20rem 10rem",
-  width: "100%",
-};
-
 const cardContainer: React.CSSProperties = {
   overflow: "hidden",
   display: "flex",
@@ -92,7 +91,6 @@ const splash: React.CSSProperties = {
   bottom: 0,
   borderRadius: "1rem",
   boxShadow: "rgba(0, 0, 0, 0.06) 0px 6px 16px 0px inset",
-  // clipPath: `path("M 0 303.5 C 0 292.454 6.91 285.101 15.36 283.5 L 353.28 219.5 C 362.963 218.033 368.64 228.454 368.64 239.5 L 384 430 C 384 441.046 369.45 450 368.64 450 L 15.36 450 C 11.786 450 0 441.046 0 430 Z")`,
 };
 
 const card: React.CSSProperties = {
