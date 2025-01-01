@@ -11,6 +11,15 @@ export default {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        primary: "#1c1c22",
+        accent: {
+          DEFAULT: "#00ff99",
+          hover: "#00e187",
+        },
+        white: "#ffffff",
+        transparent: "transparent",
+        current: "currentColor",
+        black: "#000000",
       },
     },
     fontFamily: {
