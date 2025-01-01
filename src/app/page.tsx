@@ -1,12 +1,9 @@
 import Banner, { SmallBanner } from "@/components/banner";
 import Contect from "@/components/contect";
 import FeaturesCard from "@/components/features-card";
-import Footer from "@/components/footer";
 import Hero from "@/components/hero";
-import Navbar from "@/components/navbar";
 import { FeaturedProduct, NewArivalProducts } from "@/components/products";
 import ScrollCard from "@/components/scroll-card";
-import ScrollProgress from "@/components/scroll-progress";
 
 export default function Home() {
   return (

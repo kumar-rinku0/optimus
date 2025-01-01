@@ -2,7 +2,6 @@ import Link from "next/link";
 import React from "react";
 import {
   FaApple,
-  FaAppStore,
   FaGithub,
   FaGooglePlay,
   FaInstagram,
