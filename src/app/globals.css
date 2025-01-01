@@ -19,6 +19,6 @@
 
 @layer base {
   body {
-    @apply font-primary text-base text-foreground bg-background overflow-x-hidden;
+    @apply font-primary w-full text-base text-foreground bg-background overflow-x-hidden;
   }
 }

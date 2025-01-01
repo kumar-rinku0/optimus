@@ -11,7 +11,9 @@ export default function Home() {
       <Hero />
       <FeaturesCard />
       <Products />
-      <ScrollCard />
+      <section id="shop">
+        <ScrollCard />
+      </section>
     </main>
   );
 }

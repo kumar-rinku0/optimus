@@ -26,23 +26,26 @@ interface CardProps {
 function Card({ emoji, hueA, hueB, i }: CardProps) {
   const controls = useAnimation();
   const ref = useRef(null);
-  const isInView = useInView(ref, { amount: 0.8 });
+  const isInViewFull = useInView(ref, { amount: 1 });
+  const isInView = useInView(ref, { amount: 0.5 });
   const background = `linear-gradient(306deg, ${hue(hueA)}, ${hue(hueB)})`;
 
   useEffect(() => {
-    // console.log("Element is in view: ", isInView);
+    console.log("Element is in view: ", isInView);
     const show = () => {
       controls.start("onscreen");
     };
     const hide = () => {
       controls.start("offscreen");
     };
-    if (isInView) {
+    controls.mount();
+    if (isInViewFull) {
       show();
-    } else {
+    } else if (!isInView) {
       hide();
     }
-  }, [isInView, controls]);
+    return () => controls.stop();
+  }, [isInViewFull, isInView, controls]);
 
   return (
     <motion.div

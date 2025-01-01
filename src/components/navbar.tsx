@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { FaLeaf } from "react-icons/fa";
 import { FaBars } from "react-icons/fa6";
+import MotionNav from "./motion-nav";
 
 const navLinks = [
   {
@@ -28,7 +29,7 @@ const navLinks = [
 const MobileNav = ({ className }: { className: string }) => {
   return (
     <div className={className}>
-      <FaBars className="text-xl font-semibold" />
+      <MotionNav />
     </div>
   );
 };
