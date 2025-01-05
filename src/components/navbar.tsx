@@ -13,15 +13,15 @@ const navLinks = [
   },
   {
     name: "blog",
-    id: "#blog",
+    id: "/blog",
   },
   {
     name: "about",
-    id: "#about",
+    id: "/about",
   },
   {
     name: "contect",
-    id: "#contect",
+    id: "/contect",
   },
 ];
 

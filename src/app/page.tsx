@@ -1,9 +1,8 @@
-import Banner, { SmallBanner } from "@/components/banner";
-import Contect from "@/components/contect";
+import { SmallBanner, LargeBanner } from "@/components/banner";
+import ContectBanner from "@/components/contect-banner";
 import FeaturesCard from "@/components/features-card";
 import Hero from "@/components/hero";
 import { FeaturedProduct, NewArivalProducts } from "@/components/products";
-import ScrollCard from "@/components/scroll-card";
 
 export default function Home() {
   return (
@@ -12,15 +11,12 @@ export default function Home() {
       <FeaturesCard />
       <FeaturedProduct />
       <section id="about">
-        <Banner />
+        <LargeBanner />
       </section>
       <NewArivalProducts />
       <SmallBanner />
-      <section id="blog">
-        <ScrollCard />
-      </section>
       <section id="contect">
-        <Contect />
+        <ContectBanner />
       </section>
     </main>
   );

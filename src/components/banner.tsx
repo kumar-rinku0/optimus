@@ -30,7 +30,7 @@ export const SmallBanner = () => {
   );
 };
 
-const Banner = () => {
+export const LargeBanner = () => {
   return (
     <div
       className="px-4 py-8 mx-4 bg-cover shadow lg:px-0 lg:mx-20 bg-[#e4e6f4] lg:py-8"
@@ -50,6 +50,25 @@ const Banner = () => {
         <button className="p-3 px-4 font-semibold text-white bg-orange-700 rounded hover:bg-opacity-80">
           Explore more
         </button>
+      </div>
+    </div>
+  );
+};
+
+export const Banner = ({
+  title,
+  description,
+}: {
+  title: string;
+  description: string;
+}) => {
+  return (
+    <div
+      className={`flex bg-[url("https://images.unsplash.com/photo-1442029739115-ce733f0de45e?q=80&w=2063&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")] relative items-center justify-center gap-3 p-4 lg:h-[380px] h-[300px] lg:items-center`}
+    >
+      <div className="flex flex-col absolute inset-0 lg:p-16 text-center p-12 justify-center items-center text-white bg-[#00000062]">
+        <h2 className="text-3xl font-bold capitalize lg:text-5xl">{title}</h2>
+        <div className="text-gray-400">{description}</div>
       </div>
     </div>
   );

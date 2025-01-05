@@ -1,6 +1,6 @@
 import React from "react";
 
-const Contect = () => {
+const ContectBanner = () => {
   return (
     <div className="relative mt-8 h-[240px] lg:h-[250px] lg:mt-12 text-white bg-[url('https://images.unsplash.com/photo-1550353127-b0da3aeaa0ca?q=80&w=1771&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')] grid lg:grid-cols-2 lg:gap-12">
       <div className="absolute bg-[#000000a9] inset-0 flex flex-col lg:grid px-2 lg:px-20 lg:p-12 gap-3 items-center justify-center">
@@ -30,4 +30,4 @@ const Contect = () => {
   );
 };
 
-export default Contect;
+export default ContectBanner;

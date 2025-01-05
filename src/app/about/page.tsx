@@ -1,18 +1,18 @@
 import Banner from "@/components/banner";
-import ScrollCard from "../../components/scroll-card";
+import React from "react";
 
-const Shop = () => {
+const About = () => {
   return (
     <div className="min-h-[100vh]">
       <div>
-        <ScrollCard />
         <Banner
           title="#stayhome"
           description="Save more with coupons and up to 70% off!!"
         />
       </div>
+      <div>About</div>
     </div>
   );
 };
 
-export default Shop;
+export default About;
