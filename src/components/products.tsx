@@ -48,7 +48,7 @@ const ProductCard = ({
   );
 };
 
-const FeaturedCards = () => {
+export const FeaturedCards = () => {
   return (
     <div className="flex flex-wrap justify-center items-center gap-8 px-4 py-8">
       <ProductCard
@@ -72,7 +72,7 @@ const FeaturedCards = () => {
   );
 };
 
-const NewArivalCards = () => {
+export const NewArivalCards = () => {
   return (
     <div className="flex flex-wrap justify-center items-center gap-8 px-4 py-8">
       <ProductCard
