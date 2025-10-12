@@ -1,9 +1,4 @@
-import {
-  FeaturedCards,
-  FeaturedProduct,
-  NewArivalCards,
-  NewArivalProducts,
-} from "@/components/products";
+import { FeaturedCards, NewArivalCards } from "@/components/products";
 
 const Shop = () => {
   return (
